@@ -1,14 +1,20 @@
 #include <stdio.h>
-int linear_search(int A[], int n, int VAL)
+void Linear_Search(int A[], int n, int VAL)
 {
+    int found = 0;
     for (int i = 0; i < n; i++)
     {
         if (A[i] == VAL)
         {
-            return i;
+            found = 1;
+            printf("element found at index: %d\n", i);
         }
     }
-    return -1;
+    if (found == 0)
+    {
+        printf("element not found in the array.\n");
+    }
+    return;
 }
 int main(int argc, char const *argv[])
 {
@@ -24,14 +30,6 @@ int main(int argc, char const *argv[])
     int VAL;
     printf("Enter value to search: ");
     scanf("%d", &VAL);
-    int result = linear_search(A, n, VAL);
-    if (result != -1)
-    {
-        printf("element found at index: %d\n", result);
-    }
-    else
-    {
-        printf("element not found in the array.\n");
-    }
+    Linear_Search(A, n, VAL);
     return 0;
 }
