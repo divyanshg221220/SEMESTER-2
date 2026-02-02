@@ -14,7 +14,6 @@ void Linear_Search(int A[], int n, int VAL)
     {
         printf("element not found in the array.\n");
     }
-    return;
 }
 int main(int argc, char const *argv[])
 {
