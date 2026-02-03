@@ -2,13 +2,13 @@
 #include <stdio.h>
 void string_length(char *str)
 {
-    int length = 0;
+    int l = 0;
     while (*str != '\0')
     {
-        length++;
+        l++;
         str++;
     }
-    printf("length: %d\n", length);
+    printf("length: %d\n", l);
 }
 int main(int argc, char const *argv[])
 {
