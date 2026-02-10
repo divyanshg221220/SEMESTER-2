@@ -37,7 +37,7 @@ int main(int argc, char const *argv[])
                 switch (q1)
                 {
                 case 1:
-                    for (int i = n -1; i > 0; i--)
+                    for (int i = n - 1; i > 0; i--)
                     {
                         A[i] = A[i - 1];
                     }
