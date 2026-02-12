@@ -18,13 +18,13 @@ void Delete(int LA[], int N, int K, int item)
 }
 int main(int argc, char const *argv[])
 {
-    int n;
+    int N;
     printf("Enter number of elements: ");
-    scanf("%d", &n);
-    int A[n];
-    for (int i = 0; i < n; i++)
+    scanf("%d", &N);
+    int LA[N];
+    for (int i = 0; i < N; i++)
     {
-        A[i] = 0;
+        LA[i] = 0;
     }
     int q;
     do
@@ -39,45 +39,45 @@ int main(int argc, char const *argv[])
         printf("8. Exit\n");
         printf("Enter your choice : ");
         scanf("%d", &q);
-        int val;
+        int item;
         if (q == 1 || q == 2 || q == 3)
         {
             printf("Enter element to insert: ");
-            scanf("%d", &val);
+            scanf("%d", &item);
         }
         switch (q)
         {
         case 1:
-            Insert(A, n, 0, val);
+            Insert(LA, N, 0, item);
             break;
         case 2:
-            Insert(A, n, n - 1, val);
+            Insert(LA, N, N - 1, item);
             break;
         case 3:
             {
                 int K;
                 printf("Enter index to insert at: ");
                 scanf("%d", &K);
-                Insert(A, n, K, val);
+                Insert(LA, N, K, item);
                 break;
             }
         case 4:
-            Delete(A, n, 0, val);
+            Delete(LA, N, 0, item);
             break;
         case 5:
-            Delete(A, n, n - 1, val);
+            Delete(LA, N, N - 1, item);
             break;
         case 6:
             {
                 int K;
                 printf("Enter index to delete from: ");
                 scanf("%d", &K);
-                Delete(A, n, K, val);
+                Delete(LA, N, K, item);
                 break;
             }
         case 7:
-            for (int i = 0; i < n; i++)
-                printf("%d ", A[i]);
+            for (int i = 0; i < N; i++)
+                printf("%d ", LA[i]);
             printf("\n");
             break;
         case 8:
