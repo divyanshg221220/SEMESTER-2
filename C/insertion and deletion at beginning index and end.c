@@ -9,7 +9,7 @@ int main(int argc, char const *argv[])
     {
         A[i] = 0;
     }
-    int q;
+    int q, elements = 0;
     do
     {
         for (int i = 0; i < n; i++)
@@ -26,6 +26,11 @@ int main(int argc, char const *argv[])
         {
         case 1:
             {
+                if (elements == n)
+                {
+                    printf("Overflow\n");
+                    break;
+                }
                 int val, q1;
                 printf("Enter element to insert: ");
                 scanf("%d", &val);
@@ -42,6 +47,7 @@ int main(int argc, char const *argv[])
                         A[i] = A[i - 1];
                     }
                     A[0] = val;
+                    elements++;
                     break;
                 case 2:
                     {
@@ -53,10 +59,12 @@ int main(int argc, char const *argv[])
                             A[i] = A[i - 1];
                         }
                         A[index] = val;
+                        elements++;
                         break;
                     };
                 case 3:
                     A[n - 1] = val;
+                    elements++;
                     break;
                 default:
                     printf("Invalid Input\n");
@@ -66,6 +74,11 @@ int main(int argc, char const *argv[])
             };
         case 2:
             {
+                if (elements == 0)
+                {
+                    printf("Underflow\n");
+                    break;
+                }
                 int q2;
                 printf("1. Delete at beginning\n");
                 printf("2. Delete at index\n");
@@ -80,6 +93,7 @@ int main(int argc, char const *argv[])
                         A[i] = A[i + 1];
                     }
                     A[n - 1] = 0;
+                    elements--;
                     break;
                 case 2:
                     {
@@ -90,10 +104,12 @@ int main(int argc, char const *argv[])
                         {
                             A[i] = A[i + 1];
                         }
+                        elements--;
                         break;
                     };
                 case 3:
                     A[n - 1] = 0;
+                    elements--;
                     break;
                 default:
                     printf("Invalid Input\n");
