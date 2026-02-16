@@ -31,14 +31,14 @@ int main(int argc, char const *argv[])
     }
     if (count_zero > (x*y)/2)
     {
-        printf("sparse matrix.\n");
+        printf("sparse matrix\n");
     }
     else
     {
-        printf("dense matrix.\n");
+        printf("dense matrix\n");
     }
     int count_non_zero = (x * y) - count_zero;
-    int row[count_non_zero], column[count_non_zero], value[count_non_zero];
+    int matrix_representation[count_non_zero][3];
     int k = 0;
     for (int i = 0; i < x; i++)
     {
@@ -46,9 +46,9 @@ int main(int argc, char const *argv[])
         {
             if (matrix[i][j] != 0)
             {
-                row[k] = i;
-                column[k] = j;
-                value[k] = matrix[i][j];
+                matrix_representation[k][0] = i;
+                matrix_representation[k][1] = j;
+                matrix_representation[k][2] = matrix[i][j];
                 k++;
             }
         }
@@ -57,7 +57,7 @@ int main(int argc, char const *argv[])
     printf("Row\tColumn\tValue\n");
     for (int i = 0; i < count_non_zero; i++)
     {
-        printf("%d\t%d\t%d\n", row[i], column[i], value[i]);
+        printf("%d\t%d\t%d\n", matrix_representation[i][0], matrix_representation[i][1], matrix_representation[i][2]);
     }
     return 0;
 }
