@@ -7,7 +7,7 @@ int main(int argc, char const *argv[])
     int A[n];
     for (int i = 0; i < n; i++)
     {
-        printf("Enter %d element: ", i+1);
+        printf("Enter %d element: ", i + 1);
         scanf("%d", &A[i]);
     }
     printf("old array: ");
@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
     int temp = A[0];
     for (int i = 0; i < n-1; i++)
     {
-        A[i] = A[i+1];
+        A[i] = A[i + 1];
     }
     A[n-1] = temp;
     printf("new array: ");

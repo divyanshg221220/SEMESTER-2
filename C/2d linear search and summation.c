@@ -11,7 +11,7 @@ int main(int argc, char const *argv[])
     {
         for (int j = 0; j < y; j++)
         {
-            printf("Enter (%d, %d) element: ", i+1, j+1);
+            printf("Enter (%d, %d) element: ", i + 1, j + 1);
             scanf("%d", &matrix[i][j]);
             sum += matrix[i][j];
         }
@@ -25,7 +25,7 @@ int main(int argc, char const *argv[])
         {
             if (matrix[i][j] == val)
             {
-                printf("value found at index: (%d, %d)\n", i+1, j+1);
+                printf("value found at index: (%d, %d)\n", i + 1, j + 1);
                 found = 1;
             }
         }

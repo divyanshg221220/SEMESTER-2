@@ -7,7 +7,7 @@ int main(int argc, char const *argv[])
     int arr[n];
     for (int i = 0; i < n; i++)
     {
-        printf("Enter %d element: ", i+1);
+        printf("Enter %d element: ", i + 1);
         scanf("%d", &arr[i]);
         sum += arr[i];
     }

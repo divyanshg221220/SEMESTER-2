@@ -6,23 +6,36 @@ int main(int argc, char const *argv[])
     scanf("%d", &x);
     printf("Enter number of columns: ");
     scanf("%d", &y);
-    int A[x][y];
+    int matrix[x][y];
     for (int i = 0; i < x; i++)
     {
         for (int j = 0; j < y; j++)
         {
             printf("Enter (%d, %d) element: ", i + 1, j + 1);
-            scanf("%d", &A[i][j]);
+            scanf("%d", &matrix[i][j]);
         }
     }
-    printf("array: \n");
+    int count_zero = 0;
+    printf("matrix: \n");
     for (int i = 0; i < x; i++)
     {
         for (int j = 0; j < y; j++)
         {
-            printf("%d ", A[i][j]);
+            printf("%d ", matrix[i][j]);
+            if (matrix[i][j] == 0)
+            {
+                count_zero++;
+            }
         }
         printf("\n");
+    }
+    if (count_zero > (x*y)/2)
+    {
+        printf("sparse matrix");
+    }
+    else
+    {
+        printf("not sparse matrix");
     }
     return 0;
 }

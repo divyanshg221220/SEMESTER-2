@@ -15,5 +15,21 @@ int main(int argc, char const *argv[])
     {
         printf("%d ", A[i]);
     }
+    printf("\n");
+    int pos, val;
+    printf("Enter position to insert: ");
+    scanf("%d", &pos);
+    printf("Enter value to insert: ");
+    scanf("%d", &val);
+    for (int i = n - 1; i >= pos; i--)
+    {
+        A[i + 1] = A[i];
+    }
+    A[pos] = val;
+    printf("array: ");
+    for (int i = 0; i < n; i++)    
+    {
+        printf("%d ", A[i]);
+    }
     return 0;
 }
