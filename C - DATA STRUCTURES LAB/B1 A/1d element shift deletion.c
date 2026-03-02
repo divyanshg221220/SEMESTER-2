@@ -7,7 +7,7 @@ int main(int argc, char const *argv[])
     int A[n];
     for (int i = 0; i < n; i++)
     {
-        printf("Enter %d element: ", i + 1);
+        printf("Enter element %d: ", i + 1);
         scanf("%d", &A[i]);
     }
     printf("array: ");
