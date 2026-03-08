@@ -150,22 +150,22 @@ int main(int argc, char const *argv[])
             printf("multiplication: ");
             for (int i = result_degree; i >= 0; i--)
             {           
-                    if (i == 0)
-                    {
-                        printf("%d", result_coefficients[i]);
-                    }
-                    else if (i == 1)
-                    {
-                        printf("%dx", result_coefficients[i]);
-                    }
-                    else
-                    {
-                        printf("%dx^%d", result_coefficients[i], i);
-                    }
-                    if (i > 0)
-                    {
-                        printf(" + ");
-                    }
+                if (i == 0)
+                {
+                    printf("%d", result_coefficients[i]);
+                }
+                else if (i == 1)
+                {
+                    printf("%dx", result_coefficients[i]);
+                }
+                else
+                {
+                    printf("%dx^%d", result_coefficients[i], i);
+                }
+                if (i > 0)
+                {
+                    printf(" + ");
+                }
             }
         }
         break;
