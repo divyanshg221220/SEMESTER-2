@@ -56,7 +56,7 @@ int main(int argc, char const *argv[])
             printf("Exit");
             break;
         default:
-            printf("Invalid Input");
+            printf("Invalid Input\n");
             break;
         }
     } while (choice != 3);
