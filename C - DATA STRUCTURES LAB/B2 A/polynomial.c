@@ -2,7 +2,7 @@
 int main(int argc, char const *argv[])
 {
     int n1;
-    printf("Enter the degree of first polynomial: ");
+    printf("Enter the degree of polynomial 1: ");
     scanf("%d", &n1);
     int coefficients1[n1 + 1];
     for (int i = n1; i >= 0; i--)
@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
         printf("Enter the coefficient of x^%d: ", i);
         scanf("%d", &coefficients1[i]);
     }
-    printf("polynomial: ");
+    printf("polynomial 1: ");
     for (int i = n1; i >= 0; i--)
     {
         if (i == 0)
@@ -31,7 +31,7 @@ int main(int argc, char const *argv[])
         }
     }
     int n2;
-    printf("\nEnter the degree of the second polynomial: ");
+    printf("\nEnter the degree of the polynomial 2: ");
     scanf("%d", &n2);
     int coefficients2[n2 + 1];
     for (int i = n2; i >= 0; i--)
@@ -39,7 +39,7 @@ int main(int argc, char const *argv[])
         printf("Enter the coefficient of x^%d: ", i);
         scanf("%d", &coefficients2[i]);
     }
-    printf("polynomial: ");
+    printf("polynomial 2: ");
     for (int i = n2; i >= 0; i--)
     {
         if (i == 0)
@@ -150,22 +150,22 @@ int main(int argc, char const *argv[])
             printf("multiplication: ");
             for (int i = result_degree; i >= 0; i--)
             {           
-                    if (i == 0)
-                    {
-                        printf("%d", result_coefficients[i]);
-                    }
-                    else if (i == 1)
-                    {
-                        printf("%dx", result_coefficients[i]);
-                    }
-                    else
-                    {
-                        printf("%dx^%d", result_coefficients[i], i);
-                    }
-                    if (i > 0)
-                    {
-                        printf(" + ");
-                    }
+                if (i == 0)
+                {
+                    printf("%d", result_coefficients[i]);
+                }
+                else if (i == 1)
+                {
+                    printf("%dx", result_coefficients[i]);
+                }
+                else
+                {
+                    printf("%dx^%d", result_coefficients[i], i);
+                }
+                if (i > 0)
+                {
+                    printf(" + ");
+                }
             }
         }
         break;
