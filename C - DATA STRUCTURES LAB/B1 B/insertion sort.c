@@ -1,4 +1,3 @@
-// Write a program to perform Insertion Sort
 #include <stdio.h>
 int main(int argc, char const *argv[])
 {

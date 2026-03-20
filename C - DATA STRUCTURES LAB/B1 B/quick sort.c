@@ -1,4 +1,3 @@
-// Write a program to perform Quick Sort
 #include <stdio.h>
 void swap(int *a, int *b)
 {
