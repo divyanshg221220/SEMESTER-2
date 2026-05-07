@@ -1,4 +1,5 @@
 // Write a program to perform operations on Circular Linked List
+// (Doubly Circular Linked List)
 #include <stdio.h>
 #include <stdlib.h>
 struct node {
