@@ -8,7 +8,7 @@ int main() {
     for(int i = 0; i < n; i++)
         scanf("%d", &a[i]);
     printf("Enter element to search: ");
-    scanf("%d", &key); 
+    scanf("%d", &key);
     low = 0;
     high = n - 1;
     while(low <= high) {
