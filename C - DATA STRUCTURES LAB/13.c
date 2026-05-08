@@ -79,33 +79,33 @@ int main() {
         printf("\n7.Display\n8.Exit\n");
         scanf("%d", &choice);
         switch(choice) {
-            case 1:
-                scanf("%d", &val);
-                insertBegin(val);
-                break;
-            case 2:
-                scanf("%d", &val);
-                insertEnd(val);
-                break;
-            case 3:
-                scanf("%d%d", &val, &pos);
-                insertPos(val, pos);
-                break;
-            case 4:
-                deleteBegin();
-                break;
-            case 5:
-                deleteEnd();
-                break;
-            case 6:
-                scanf("%d", &pos);
-                deletePos(pos);
-                break;
-            case 7:
-                display();
-                break;
-            case 8:
-                return 0;
+        case 1:
+            scanf("%d", &val);
+            insertBegin(val);
+            break;
+        case 2:
+            scanf("%d", &val);
+            insertEnd(val);
+            break;
+        case 3:
+            scanf("%d%d", &val, &pos);
+            insertPos(val, pos);
+            break;
+        case 4:
+            deleteBegin();
+            break;
+        case 5:
+            deleteEnd();
+            break;
+        case 6:
+            scanf("%d", &pos);
+            deletePos(pos);
+            break;
+        case 7:
+            display();
+            break;
+        case 8:
+            return 0;
         }
     }
 }

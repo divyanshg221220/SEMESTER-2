@@ -39,15 +39,15 @@ int main() {
         printf("\n1.Insert End\n2.Display\n3.Exit\n");
         scanf("%d", &choice);
         switch(choice) {
-            case 1:
-                scanf("%d", &val);
-                insertEnd(val);
-                break;
-            case 2:
-                display();
-                break;
-            case 3:
-                return 0;
+        case 1:
+            scanf("%d", &val);
+            insertEnd(val);
+            break;
+        case 2:
+            display();
+            break;
+        case 3:
+            return 0;
         }
    }
 }

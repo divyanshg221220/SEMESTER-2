@@ -48,18 +48,18 @@ int main() {
         printf("\n1.Insert End\n2.Delete Begin\n3.Display\n4.Exit\n");
         scanf("%d", &choice);
         switch(choice) {
-            case 1:
-                scanf("%d", &val);
-                insertEnd(val);
-                break;
-            case 2:
-                deleteBegin();
-                break;
-            case 3:
-                display();
-                break;
-            case 4:
-                return 0;
+        case 1:
+            scanf("%d", &val);
+            insertEnd(val);
+            break;
+        case 2:
+            deleteBegin();
+            break;
+        case 3:
+            display();
+            break;
+        case 4:
+            return 0;
         }
     }
 }
