@@ -1,4 +1,4 @@
-// D. WAP to implement Queue using array perform
+// WAP to implement Queue using array perform
 // ->insertion
 // ->Deletion
 #include <stdio.h>
