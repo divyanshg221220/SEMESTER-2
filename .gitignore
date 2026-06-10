@@ -55,5 +55,5 @@ dkms.conf
 *.dwo
 
 .vscode/
-sample.*
+temp.*
 -.*
