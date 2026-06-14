@@ -74,7 +74,8 @@ int main(int argc, char const *argv[])
     printf("Linked List 2: ");
     display(head2);
     merge();
-    printf("After merging: ");
+    printf("After merging\n");
+    printf("Linked List 1: ");
     display(head1);
     return 0;
 }

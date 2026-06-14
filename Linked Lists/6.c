@@ -71,7 +71,8 @@ int main(int argc, char const *argv[])
     printf("Linked List 2: ");
     display(head2);
     copy();
-    printf("After copying: ");
+    printf("After copying\n");
+    printf("Linked List 2: ");
     display(head2);
     return 0;
 }
