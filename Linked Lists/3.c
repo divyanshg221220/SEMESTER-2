@@ -57,6 +57,7 @@ int main(int argc, char const *argv[])
     }
     display();
     multiply();
+    printf("After multipying 10: ");
     display();
     return 0;
 }

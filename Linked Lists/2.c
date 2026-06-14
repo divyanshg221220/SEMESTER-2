@@ -36,7 +36,7 @@ void count(int val)
         }
         temp = temp -> next;
     }
-    printf("number of occurrences of %d: %d", val, count);
+    printf("Number of occurrences of %d: %d", val, count);
 }
 void display()
 {

@@ -66,8 +66,12 @@ int main(int argc, char const *argv[])
         scanf("%d", &val);
         insert(&head1, val);
     }
+    printf("Linked List 1: ");
     display(head1);
+    printf("Linked List 2: ");
+    display(head2);
     copy();
+    printf("After copying: ");
     display(head2);
     return 0;
 }

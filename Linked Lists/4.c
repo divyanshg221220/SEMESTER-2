@@ -36,7 +36,7 @@ void count()
         }
         temp = temp -> next;
     }
-    printf("number of non-zero elements: %d", count);
+    printf("Number of non-zero elements: %d", count);
 }
 void display()
 {

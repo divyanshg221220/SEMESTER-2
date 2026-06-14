@@ -31,12 +31,12 @@ void sort()
     {
         if (temp -> data > temp -> next -> data)
         {
-            printf("not sorted");
+            printf("Not sorted");
             return;
         }
         temp = temp -> next;
     }
-    printf("sorted");
+    printf("Sorted");
 }
 void display()
 {
