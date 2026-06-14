@@ -32,12 +32,12 @@ void copy()
     {
         return;
     }
-    struct node *temp1 = head1;
+    struct node *temp = head1;
     do
     {
-        insert(&head2, temp1 -> data);
-        temp1 = temp1 -> next;
-    } while (temp1 != head1);
+        insert(&head2, temp -> data);
+        temp = temp -> next;
+    } while (temp != head1);
 }
 void display(struct node *head)
 {
