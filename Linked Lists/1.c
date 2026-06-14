@@ -70,6 +70,7 @@ int main(int argc, char const *argv[])
         scanf("%d", &val);
         insert(val);
     }
+    display();
     delete();
     display();
     return 0;
