@@ -56,7 +56,7 @@ void display()
         printf("%d -> ", temp -> data);
         temp = temp -> next;
     }
-    printf("NULL");
+    printf("NULL\n");
 }
 int main(int argc, char const *argv[])
 {
