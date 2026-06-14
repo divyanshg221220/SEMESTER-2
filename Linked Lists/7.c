@@ -6,6 +6,7 @@ struct node
     int data;
     struct node *next;
 };
+struct node *head = NULL;
 struct node *head1 = NULL;
 struct node *head2 = NULL;
 void insert(struct node **head, int val)
@@ -27,17 +28,18 @@ void insert(struct node **head, int val)
 }
 void merge()
 {
-    if (head1 == NULL)
+    struct node *temp1 = head1;
+    struct node *temp2 = head2;
+    while (temp1 != NULL)
     {
-        head1 = head2;
-        return;
+        insert(&head, temp1 -> data);
+        temp1 = temp1 -> next;
     }
-    struct node *temp = head1;
-    while (temp -> next != NULL)
+    while (temp2 != NULL)
     {
-        temp = temp -> next;
+        insert(&head, temp2 -> data);
+        temp2 = temp2 -> next;
     }
-    temp -> next = head2;
 }
 void display(struct node *head)
 {
@@ -73,9 +75,10 @@ int main(int argc, char const *argv[])
     display(head1);
     printf("Linked List 2: ");
     display(head2);
+    printf("Before merging\n");
+    display(head);
     merge();
     printf("After merging\n");
-    printf("Linked List 1: ");
-    display(head1);
+    display(head);
     return 0;
 }
