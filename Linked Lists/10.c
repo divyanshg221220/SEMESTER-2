@@ -7,6 +7,7 @@ struct node
     struct node *next;
 };
 struct node *header = NULL;
+__attribute__((constructor))
 void init()
 {
     header = malloc(sizeof(struct node));
@@ -55,7 +56,6 @@ void display()
 }
 int main(int argc, char const *argv[])
 {
-    init();
     int n;
     printf("Enter the number of elements: ");
     scanf("%d", &n);
