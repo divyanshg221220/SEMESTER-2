@@ -26,6 +26,11 @@ void insert(int val)
 }
 void delete()
 {
+    if (head == NULL)
+    {
+        printf("UNDERFLOW\n");
+        return;
+    }
     struct node *temp1 = head;
     while (temp1 != NULL)
     {
