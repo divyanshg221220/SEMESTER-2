@@ -52,7 +52,7 @@ void display(struct node *head)
     struct node *temp = head;
     while (temp != NULL)
     {
-        printf("%d -> ", temp -> data);
+        printf("%d <-> ", temp -> data);
         temp = temp -> next;
     }
     printf("NULL\n");
