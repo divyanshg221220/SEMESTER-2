@@ -24,11 +24,11 @@ void insert(int val)
     }
     temp -> next = new;
 }
-void mean(int n)
+float mean(int n)
 {
     if (n == 0)
     {
-        printf("Mean: 0.00\n");
+        return 0;
     }
     struct node *temp = head;
     int sum = 0;
@@ -37,8 +37,7 @@ void mean(int n)
         sum += temp -> data;
         temp = temp -> next;
     }
-    float mean = (float)sum / n;
-    printf("Mean: %.2f\n", mean);
+    return (float)sum / n;
 }
 void display()
 {
@@ -63,6 +62,6 @@ int main(int argc, char const *argv[])
         insert(val);
     }
     display();
-    mean(n);
+    printf("Mean: %.2f", mean(n));
     return 0;
 }
