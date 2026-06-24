@@ -1,7 +1,6 @@
 // Write a program to input an n digit number. Now, break this number into its individual digits and then store every single digit in a separate node thereby forming a linked list. For example, if you enter 12345, then there will 5 nodes in the list containing nodes with values 1, 2, 3, 4, 5.
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 struct node
 {
     int data;
