@@ -80,7 +80,7 @@ int main(int argc, char const *argv[])
     }
     display();
     sort();
-    printf("After sorting: ");
+    printf("After sorting\n");
     display();
     return 0;
 }

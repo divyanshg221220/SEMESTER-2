@@ -77,7 +77,7 @@ int main(int argc, char const *argv[])
     }
     display();
     delete();
-    printf("After removing duplicates: ");
+    printf("After removing duplicates\n");
     display();
     return 0;
 }

@@ -68,15 +68,15 @@ int main(int argc, char const *argv[])
     }
     display();
     delete(0);
-    printf("After deleting first: ");
+    printf("After deleting first\n");
     display();
     n--;
     delete(n - 1);
-    printf("After deleting last: ");
+    printf("After deleting last\n");
     display();
     n--;
     delete(n / 2);
-    printf("After deleting middle: ");
+    printf("After deleting middle\n");
     display();
     return 0;
 }
