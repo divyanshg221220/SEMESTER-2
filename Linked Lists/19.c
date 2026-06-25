@@ -72,7 +72,7 @@ int main(int argc, char const *argv[])
     }
     display();
     interchange();
-    printf("After interchange\n");
+    printf("After interchanging\n");
     display();
     return 0;
 }
