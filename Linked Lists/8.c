@@ -32,7 +32,7 @@ void insert(int val)
 }
 void sort()
 {
-    if (head == NULL)
+    if (head == NULL || head -> next == head)
     {
         return;
     }

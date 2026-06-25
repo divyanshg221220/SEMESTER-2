@@ -29,7 +29,7 @@ void insert(int val)
 }
 void interchange()
 {
-    if (head == NULL)
+    if (head == NULL || head -> next == NULL)
     {
         return;
     }
