@@ -58,7 +58,7 @@ int main(int argc, char const *argv[])
     float val;
     for (int i = 0; i < n; i++)
     {
-        printf("Enter element %d: ", i + 1);
+        printf("Enter the element %d: ", i + 1);
         scanf("%f", &val);
         insert(val);
     }
