@@ -24,7 +24,7 @@ void insert(int val)
     }
     temp -> next = new;
 }
-int min(int n)
+void min(int n)
 {
     if (n == 0)
     {
@@ -40,9 +40,9 @@ int min(int n)
         }
         temp = temp -> next;
     }
-    return min;
+    printf("Minimum: %d\n", min);
 }
-int max(int n)
+void max(int n)
 {
     if (n == 0)
     {
@@ -58,7 +58,7 @@ int max(int n)
         }
         temp = temp -> next;
     }
-    return max;
+    printf("Maximum: %d\n", max);
 }
 void display()
 {
@@ -83,7 +83,7 @@ int main(int argc, char const *argv[])
         insert(val);
     }
     display();
-    printf("Minimum: %d\n", min(n));
-    printf("Maximum: %d", max(n));
+    min(n);
+    max(n);
     return 0;
 }

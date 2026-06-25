@@ -24,7 +24,7 @@ void insert(int val)
     }
     temp -> next = new;
 }
-float mean(int n)
+void mean(int n)
 {
     if (n == 0)
     {
@@ -37,7 +37,7 @@ float mean(int n)
         sum += temp -> data;
         temp = temp -> next;
     }
-    return (float)sum / n;
+    printf("Mean: %.2f", (float)sum / n);
 }
 void display()
 {
@@ -62,6 +62,6 @@ int main(int argc, char const *argv[])
         insert(val);
     }
     display();
-    printf("Mean: %.2f", mean(n));
+    mean(n);
     return 0;
 }
