@@ -12,15 +12,15 @@ void init()
 {
     header = malloc(sizeof(struct node));
     header -> data = -1;
-    header -> next = NULL;
+    header -> next = header;
 }
 void insert(int val)
 {
     struct node *new = malloc(sizeof(struct node));
     new -> data = val;
-    new -> next = NULL;
+    new -> next = header;
     struct node *temp = header;
-    while (temp -> next != NULL)
+    while (temp -> next != header)
     {
         temp = temp -> next;
     }
@@ -28,7 +28,7 @@ void insert(int val)
 }
 void delete(int pos)
 {
-    if (header -> next == NULL)
+    if (header -> next == header)
     {
         printf("UNDERFLOW\n");
         return;
@@ -47,12 +47,12 @@ void display()
 {
     printf("HEADER -> ");
     struct node *temp = header -> next;
-    while (temp != NULL)
+    while (temp != header)
     {
         printf("%d -> ", temp -> data);
         temp = temp -> next;
     }
-    printf("NULL\n");
+    printf("HEADER\n");
 }
 int main(int argc, char const *argv[])
 {
