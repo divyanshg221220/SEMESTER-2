@@ -12,7 +12,6 @@ void insert(struct node **head, int val)
 {
     struct node *new = malloc(sizeof(struct node));
     new -> data = val;
-    new -> next = NULL;
     if (*head == NULL)
     {
         *head = new;
