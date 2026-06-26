@@ -78,12 +78,11 @@ int main(int argc, char const *argv[])
         scanf("%d", &val);
         insert(val);
     }
+    display();
     int k;
     printf("Enter the position of the node to delete: ");
     scanf("%d", &k);
-    display();
     delete(k);
-    printf("After removing kth node\n");
     display();
     return 0;
 }

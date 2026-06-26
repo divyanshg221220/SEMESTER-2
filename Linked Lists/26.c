@@ -26,12 +26,12 @@ void insert(int val, int i)
     }
     temp -> next = new;
 }
-void multiply(int num)
+void multiply(int val)
 {
     struct node *temp = head;
     while (temp != NULL)
     {
-        temp -> coefficient *= num;
+        temp -> coefficient *= val;
         temp = temp -> next;
     }
 }
@@ -61,12 +61,10 @@ int main(int argc, char const *argv[])
         scanf("%d", &val);
         insert(val, i);
     }
-    int num;
-    printf("Enter the number to multiply: ");
-    scanf("%d", &num);
     display();
-    multiply(num);
-    printf("After multipying\n");
+    printf("Enter the number to multiply: ");
+    scanf("%d", &val);
+    multiply(val);
     display();
     return 0;
 }
