@@ -54,6 +54,7 @@ void delete_first_occurrence(char val)
         prev = temp;
         temp = temp -> next;
     }
+    printf("Not found\n");
 }
 void delete_last_occurrence(char val)
 {
@@ -88,6 +89,10 @@ void delete_last_occurrence(char val)
         }
         free(temp2);
     }
+    else
+    {
+        printf("Not found\n");
+    }
 }
 void delete_all_occurrences(char val)
 {
@@ -98,10 +103,12 @@ void delete_all_occurrences(char val)
     }
     struct node *temp = head;
     struct node *prev = NULL;
+    int found = 0;
     while (temp != NULL)
     {
         if (temp -> data == val)
         {
+            found = 1;
             if (prev == NULL)
             {
                 head = temp -> next;
@@ -120,6 +127,10 @@ void delete_all_occurrences(char val)
             prev = temp;
             temp = temp -> next;
         }
+    }
+    if (!found)
+    {
+        printf("Not found\n");
     }
 }
 void display()

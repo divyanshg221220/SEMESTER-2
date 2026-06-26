@@ -31,7 +31,12 @@ void delete(int k)
         printf("UNDERFLOW\n");
         return;
     }
-    struct node *temp1 = head; 
+    struct node *temp1 = head;
+    if (k <= 0)
+    {
+        printf("Invalid\n");
+        return;
+    }
     if (k == 1)
     {
         head = temp1 -> next;
@@ -44,12 +49,11 @@ void delete(int k)
     }
     if (temp1 == NULL || temp1 -> next == NULL)
     {
-        printf("UNDERFLOW\n");
+        printf("Invalid\n");
         return;
     }
     else
     {
-
         struct node *next = temp1 -> next -> next;
         struct node *temp2 = temp1 -> next;
         free(temp2);
