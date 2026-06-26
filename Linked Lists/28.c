@@ -41,10 +41,10 @@ int main(int argc, char const *argv[])
     int n;
     printf("Enter the number of employees: ");
     scanf("%d", &n);
+    int id;
+    char name[25];
     for (int i = 0; i < n; i++)
     {
-        int id;
-        char name[25];
         printf("Enter the id of employee %d: ", i + 1);
         scanf("%d", &id);
         printf("Enter the name of employee %d: ", i + 1);
