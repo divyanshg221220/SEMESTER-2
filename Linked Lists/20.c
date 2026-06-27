@@ -30,15 +30,15 @@ void first_to_last()
     {
         return;
     }
-    struct node *first = head;
-    struct node *last = head;
+    struct node *temp1 = head;
+    struct node *temp2 = head;
     head = head -> next;
-    while (last -> next != NULL)
+    while (temp2 -> next != NULL)
     {
-        last = last -> next;
+        temp2 = temp2 -> next;
     }
-    last -> next = first;
-    first -> next = NULL;
+    temp2 -> next = temp1;
+    temp1 -> next = NULL;
 }
 void display()
 {
