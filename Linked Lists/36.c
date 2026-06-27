@@ -101,7 +101,6 @@ int main(int argc, char const *argv[])
     printf("Enter the position of the node to interchange: ");
     scanf("%d", &k);
     interchange(k);
-    printf("After interchanging\n");
     display();
     return 0;
 }
