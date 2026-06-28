@@ -46,18 +46,7 @@ void display()
 }
 int main(int argc, char const *argv[])
 {
-    int n;
-    printf("Enter the number of elements: ");
-    scanf("%d", &n);
-    int val;
-    for (int i = 0; i < n; i++)
-    {
-        printf("Enter the element %d: ", i + 1);
-        scanf("%d", &val);
-        push(val);
-    }
-    display();
-    int choice;
+    int choice, val;
     do
     {
         printf("1. Push\n");
@@ -84,7 +73,7 @@ int main(int argc, char const *argv[])
             display();
             break;
         case 5:
-            printf("Exiting...\n");
+            printf("Exit\n");
             break;
         default:
             printf("Invalid choice\n");
