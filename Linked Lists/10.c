@@ -11,7 +11,7 @@ __attribute__((constructor))
 void init()
 {
     header = malloc(sizeof(struct node));
-    header -> data = -1;
+    header -> data = 0;
     header -> next = NULL;
 }
 void insert(int val)
