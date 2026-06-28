@@ -166,21 +166,21 @@ int main(int argc, char const *argv[])
     scanf(" %c", &val);
     switch (choice)
     {
-        case 1:
-            delete_first_occurrence(val);
-            printf("After deleting first occurrence of a given character '%c' in a linked list\n", val);
-            break;
-        case 2:
-            delete_last_occurrence(val);
-            printf("After deleting last occurrence of a given character '%c' in a linked list\n", val);
-            break;
-        case 3:
-            delete_all_occurrences(val);
-            printf("After deleting all occurrences of a given character '%c' in a linked list\n", val);
-            break;
-        default:
-            printf("Invalid choice\n");
-            return 1;
+    case 1:
+        delete_first_occurrence(val);
+        printf("After deleting first occurrence of a given character '%c' in a linked list\n", val);
+        break;
+    case 2:
+        delete_last_occurrence(val);
+        printf("After deleting last occurrence of a given character '%c' in a linked list\n", val);
+        break;
+    case 3:
+        delete_all_occurrences(val);
+        printf("After deleting all occurrences of a given character '%c' in a linked list\n", val);
+        break;
+    default:
+        printf("Invalid choice\n");
+        return 1;
     }
     display();
     return 0;
