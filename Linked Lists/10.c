@@ -38,8 +38,7 @@ void delete(int pos)
     {
         prev = prev -> next;
     }
-    struct node *temp;
-    temp = prev -> next;
+    struct node *temp = prev -> next;
     prev -> next = temp -> next;
     free(temp);
 }
