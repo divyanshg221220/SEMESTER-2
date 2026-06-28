@@ -1,0 +1,81 @@
+// Write a program to delete all nodes from a header linked list that has negative values in its data part.
+#include <stdio.h>
+#include <stdlib.h>
+struct node
+{
+    int data;
+    struct node *next;
+};
+struct node *header = NULL;
+__attribute__((constructor))
+void init()
+{
+    header = malloc(sizeof(struct node));
+    header -> data = 0;
+    header -> next = NULL;
+}
+void insert(int val)
+{
+    struct node *new = malloc(sizeof(struct node));
+    new -> data = val;
+    new -> next = NULL;
+    struct node *temp = header;
+    while (temp -> next != NULL)
+    {
+        temp = temp -> next;
+    }
+    temp -> next = new;
+}
+void delete()
+{
+    if (header -> next == NULL)
+    {
+        printf("UNDERFLOW\n");
+        return;
+    }
+    struct node *prev = header;
+    struct node *temp = header -> next;
+    while (temp != NULL)
+    {
+        if (temp -> data < 0)
+        {
+            prev -> next = temp -> next;
+            free(temp);
+            temp = prev -> next;
+        }
+        else
+        {
+            prev = temp;
+            temp = temp -> next;
+        }
+    }
+}
+void display()
+{
+    printf("HEADER -> ");
+    struct node *temp = header -> next;
+    while (temp != NULL)
+    {
+        printf("%d -> ", temp -> data);
+        temp = temp -> next;
+    }
+    printf("NULL\n");
+}
+int main(int argc, char const *argv[])
+{
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    int val;
+    for (int i = 0; i < n; i++)
+    {
+        printf("Enter the element %d: ", i + 1);
+        scanf("%d", &val);
+        insert(val);
+    }
+    display();
+    delete();
+    printf("After deleting\n");
+    display();
+    return 0;
+}
