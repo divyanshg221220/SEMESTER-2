@@ -39,16 +39,26 @@ int getPriority(char op)
 }
 int InfixToPostfix(char *infix, char *postfix)
 {
-    int i = 0;
-    int j = 0;
+    int i = 0, j = 0;
+    int expectOperand = 1;
     while (infix[i] != '\0')
     {
         if (infix[i] == '(')
         {
+            if (!expectOperand)
+            {
+                postfix[j] = '\0';
+                return 1;
+            }
             push(infix[i]);
         }
         else if (infix[i] == ')')
         {
+            if (expectOperand)
+            {
+                postfix[j] = '\0';
+                return 1;
+            }
             while (top != NULL && top -> data != '(')
             {
                 postfix[j++] = top -> data;
@@ -60,19 +70,32 @@ int InfixToPostfix(char *infix, char *postfix)
                 return 1;
             }
             pop();
+            expectOperand = 0;
         }
         else if (infix[i] == '+' || infix[i] == '-' || infix[i] == '*' || infix[i] == '/' || infix[i] == '%')
         {
+            if (expectOperand)
+            {
+                postfix[j] = '\0';
+                return 1;
+            }
             while (top != NULL && top -> data != '(' && getPriority(top -> data) >= getPriority(infix[i]))
             {
                 postfix[j++] = top -> data;
                 pop();
             }
             push(infix[i]);
+            expectOperand = 1;
         }
         else if (isdigit(infix[i]) || isalpha(infix[i]))
         {
+            if (!expectOperand)
+            {
+                postfix[j] = '\0';
+                return 1;
+            }
             postfix[j++] = infix[i];
+            expectOperand = 0;
         }
         else
         {
@@ -80,6 +103,11 @@ int InfixToPostfix(char *infix, char *postfix)
             return 1;
         }
         i++;
+    }
+    if (expectOperand)
+    {
+        postfix[j] = '\0';
+        return 1;
     }
     while (top != NULL)
     {
