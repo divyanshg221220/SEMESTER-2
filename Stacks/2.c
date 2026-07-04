@@ -37,46 +37,46 @@ int getPriority(char op)
     }
     return 0;
 }
-int InfixToPostfix(char *exp, char *result)
+int InfixToPostfix(char *infix, char *postfix)
 {
     int i = 0;
     int j = 0;
-    while (exp[i] != '\0')
+    while (infix[i] != '\0')
     {
-        if (exp[i] == '(')
+        if (infix[i] == '(')
         {
-            push(exp[i]);
+            push(infix[i]);
         }
-        else if (exp[i] == ')')
+        else if (infix[i] == ')')
         {
             while (top != NULL && top -> data != '(')
             {
-                result[j++] = top -> data;
+                postfix[j++] = top -> data;
                 pop();
             }
             if (top == NULL)
             {
-                result[j] = '\0';
+                postfix[j] = '\0';
                 return 1;
             }
             pop();
         }
-        else if (exp[i] == '+' || exp[i] == '-' || exp[i] == '*' || exp[i] == '/' || exp[i] == '%')
+        else if (infix[i] == '+' || infix[i] == '-' || infix[i] == '*' || infix[i] == '/' || infix[i] == '%')
         {
-            while (top != NULL && top -> data != '(' && getPriority(top -> data) >= getPriority(exp[i]))
+            while (top != NULL && top -> data != '(' && getPriority(top -> data) >= getPriority(infix[i]))
             {
-                result[j++] = top -> data;
+                postfix[j++] = top -> data;
                 pop();
             }
-            push(exp[i]);
+            push(infix[i]);
         }
-        else if (isdigit(exp[i]) || isalpha(exp[i]))
+        else if (isdigit(infix[i]) || isalpha(infix[i]))
         {
-            result[j++] = exp[i];
+            postfix[j++] = infix[i];
         }
         else
         {
-            result[j] = '\0';
+            postfix[j] = '\0';
             return 1;
         }
         i++;
@@ -85,13 +85,13 @@ int InfixToPostfix(char *exp, char *result)
     {
         if (top -> data == '(')
         {
-            result[j] = '\0';
+            postfix[j] = '\0';
             return 1;
         }
-        result[j++] = top -> data;
+        postfix[j++] = top -> data;
         pop();
     }
-    result[j] = '\0';
+    postfix[j] = '\0';
     return 0;
 }
 int main(int argc, char const *argv[])
