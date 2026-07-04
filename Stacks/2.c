@@ -37,9 +37,10 @@ int getPriority(char op)
     }
     return 0;
 }
-void InfixToPostfix(char *exp)
+int InfixToPostfix(char *exp, char *result)
 {
     int i = 0;
+    int j = 0;
     while (exp[i] != '\0')
     {
         if (exp[i] == '(')
@@ -50,13 +51,13 @@ void InfixToPostfix(char *exp)
         {
             while (top != NULL && top -> data != '(')
             {
-                printf("%c", top -> data);
+                result[j++] = top -> data;
                 pop();
             }
             if (top == NULL)
             {
-                printf("\nInvalid");
-                return;
+                result[j] = '\0';
+                return 1;
             }
             pop();
         }
@@ -64,19 +65,19 @@ void InfixToPostfix(char *exp)
         {
             while (top != NULL && top -> data != '(' && getPriority(top -> data) >= getPriority(exp[i]))
             {
-                printf("%c", top -> data);
+                result[j++] = top -> data;
                 pop();
             }
             push(exp[i]);
         }
         else if (isdigit(exp[i]) || isalpha(exp[i]))
         {
-            printf("%c", exp[i]);
+            result[j++] = exp[i];
         }
         else
         {
-            printf("\nInvalid");
-            return;
+            result[j] = '\0';
+            return 1;
         }
         i++;
     }
@@ -84,20 +85,28 @@ void InfixToPostfix(char *exp)
     {
         if (top -> data == '(')
         {
-            printf("\nInvalid");
-            return;
+            result[j] = '\0';
+            return 1;
         }
-        printf("%c", top -> data);
+        result[j++] = top -> data;
         pop();
     }
-    printf("\n");
+    result[j] = '\0';
+    return 0;
 }
 int main(int argc, char const *argv[])
 {
-    char exp[100];
-    printf("Enter the expression: ");
-    scanf("%s", exp);
-    printf("Postfix expression: ");
-    InfixToPostfix(exp);
+    char infix[100];
+    char postfix[100];
+    printf("Enter the infix expression: ");
+    scanf("%s", infix);
+    if (InfixToPostfix(infix, postfix))
+    {
+        printf("Invalid");
+    }
+    else
+    {
+        printf("Postfix expression: %s", postfix);
+    }
     return 0;
 }
