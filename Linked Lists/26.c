@@ -11,6 +11,11 @@ struct node *head = NULL;
 void insert(int val, int i)
 {
     struct node *new = malloc(sizeof(struct node));
+    if (new == NULL)
+    {
+        printf("OVERFLOW\n");
+        return;
+    }
     new -> coefficient = val;
     new -> exponent = i;
     new -> next = NULL;

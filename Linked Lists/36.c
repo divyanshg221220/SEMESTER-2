@@ -11,6 +11,11 @@ struct node *head = NULL;
 void insert(int val)
 {
     struct node *new = malloc(sizeof(struct node));
+    if (new == NULL)
+    {
+        printf("OVERFLOW\n");
+        return;
+    }
     new -> data = val;
     if (head == NULL)
     {
