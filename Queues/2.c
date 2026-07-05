@@ -33,9 +33,9 @@ void display()
 }
 int main(int argc, char const *argv[])
 {
+    int val;
     for (int i = 0; i < 10; i++)
     {
-        int val;
         printf("Enter the element %d: ", i + 1);
         scanf("%d", &val);
         enqueue(val);

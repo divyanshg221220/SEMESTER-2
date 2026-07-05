@@ -30,9 +30,9 @@ int main(int argc, char const *argv[])
     int n;
     printf("Enter the number of students: ");
     scanf("%d", &n);
+    char val[25];
     for (int i = 0; i < n; i++)
     {
-        char val[25];
         printf("Enter the name of student %d: ", i + 1);
         scanf("%s", &val);
         push(val);
