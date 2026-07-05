@@ -77,6 +77,7 @@ int main(int argc, char const *argv[])
             break;
         default:
             printf("Invalid choice\n");
+            break;
         }
     } while (choice != 5);
     return 0;
