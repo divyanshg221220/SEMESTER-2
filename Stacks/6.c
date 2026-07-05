@@ -1,5 +1,5 @@
 // Write a program to compute F(x, y), where
-//   F(x, y) = F(x-y, y) + 1 if y<=x
+//   F(x, y) = F(x-y, y) + 1 if y≤x
 // And F(x, y) = 0 if x<y
 #include <stdio.h>
 #include <stdlib.h>
