@@ -180,7 +180,7 @@ int main(int argc, char const *argv[])
         break;
     default:
         printf("Invalid choice\n");
-        break;
+        return 1;
     }
     display();
     return 0;
