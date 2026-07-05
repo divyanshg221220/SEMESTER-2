@@ -8,23 +8,26 @@ struct stack
     struct stack *next;
 };
 struct stack *top = NULL;
-void push(int val)
+int push(int val)
 {
     struct stack *new = malloc(sizeof(struct stack));
     new -> data = val;
     new -> next = top;
     top = new;
+    return 0;
 }
-void pop()
+int pop()
 {
     if (top == NULL)
     {
-        printf("UNDERFLOW\n");
-        return;
+        return 0;
     }
+    int val;
     struct stack *temp = top;
+    val = temp -> data;
     top = top -> next;
     free(temp);
+    return val;
 }
 int F(int n, int r)
 {
@@ -34,11 +37,8 @@ int F(int n, int r)
     }
     else
     {
-        push(n);
-        push(r);
-        int result = F(n - 1, r) + F(n - 1, r - 1);
-        pop();
-        pop();
+        push(F(n - 1, r) + F(n - 1, r - 1));
+        int result = pop();
         return result;
     }
 }
