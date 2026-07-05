@@ -11,6 +11,11 @@ struct queue *rear = NULL;
 void front_enqueue(int val)
 {
     struct queue *new = malloc(sizeof(struct queue));
+    if (new == NULL)
+    {
+        printf("OVERFLOW\n");
+        return;
+    }
     new -> data = val;
     new -> next = front;
     if (rear == NULL)
@@ -22,6 +27,11 @@ void front_enqueue(int val)
 void rear_enqueue(int val)
 {
     struct queue *new = malloc(sizeof(struct queue));
+    if (new == NULL)
+    {
+        printf("OVERFLOW\n");
+        return;
+    }
     new -> data = val;
     new -> next = NULL;
     if (rear == NULL)

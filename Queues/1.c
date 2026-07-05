@@ -11,6 +11,11 @@ struct queue *rear = NULL;
 void enqueue(int val)
 {
     struct queue *new = malloc(sizeof(struct queue));
+    if (new == NULL)
+    {
+        printf("OVERFLOW\n");
+        return;
+    }
     new -> data = val;
     new -> next = NULL;
     if (rear == NULL)
