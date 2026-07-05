@@ -11,6 +11,11 @@ struct stack *top = NULL;
 void push(char *val)
 {
     struct stack *new = malloc(sizeof(struct stack));
+    if (new == NULL)
+    {
+        printf("OVERFLOW\n");
+        return;
+    }
     strcpy(new -> data, val);
     new -> next = top;
     top = new;
