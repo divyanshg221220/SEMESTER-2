@@ -46,7 +46,7 @@ void display()
 }
 int main(int argc, char const *argv[])
 {
-    int choice;
+    int choice, val;
     do
     {
         printf("1. Push\n");
@@ -59,7 +59,6 @@ int main(int argc, char const *argv[])
         switch (choice)
         {
         case 1:
-            int val;
             printf("Enter the element: ");
             scanf("%d", &val);
             push(val);
