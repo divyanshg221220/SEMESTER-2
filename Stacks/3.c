@@ -175,7 +175,7 @@ int main(int argc, char const *argv[])
     }
     else
     {
-        printf("Prefix expression: %s\n", prefix);
+        printf("Prefix expression: %s", prefix);
     }
     return 0;
 }

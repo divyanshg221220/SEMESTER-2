@@ -29,7 +29,7 @@ void peek()
 {
     if (top == NULL)
     {
-        printf("UNDERFLOW\n");
+        printf("Top: NULL\n");
         return;
     }
     printf("Top: %d\n", top -> data);

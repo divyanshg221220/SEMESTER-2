@@ -48,6 +48,6 @@ int main(int argc, char const *argv[])
     int n;
     printf("Enter n: ");
     scanf("%d", &n);
-    printf("Lambda(%d) = %d\n", n, Lambda(n));
+    printf("Lambda(%d) = %d", n, Lambda(n));
     return 0;
 }

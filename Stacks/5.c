@@ -19,7 +19,6 @@ void pop(struct stack **top)
 {
     if (*top == NULL)
     {
-        printf("UNDERFLOW\n");
         return;
     }
     struct stack *temp = *top;

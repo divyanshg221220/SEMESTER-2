@@ -50,6 +50,6 @@ int main(int argc, char const *argv[])
     scanf("%d", &M);
     printf("Enter N: ");
     scanf("%d", &N);
-    printf("F(%d, %d) = %d\n", M, N, F(M, N));
+    printf("F(%d, %d) = %d", M, N, F(M, N));
     return 0;
 }

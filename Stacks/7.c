@@ -49,6 +49,6 @@ int main(int argc, char const *argv[])
     scanf("%d", &n);
     printf("Enter r: ");
     scanf("%d", &r);
-    printf("F(%d, %d) = %d\n", n, r, F(n, r));
+    printf("F(%d, %d) = %d", n, r, F(n, r));
     return 0;
 }
