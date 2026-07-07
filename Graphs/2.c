@@ -60,6 +60,21 @@ int path(struct node *Adj[], int visited[], int src, int dest)
     }
     return 0;
 }
+void display(struct node *Adj[], int v)
+{
+    struct node *temp;
+    for (int i = 0; i < v; i++)
+    {
+        temp = Adj[i];
+        printf("%d: ", i);
+        while (temp != NULL)
+        {
+            printf("%d -> ", temp -> vertex);
+            temp = temp -> next;
+        }
+        printf("NULL\n");
+    }
+}
 int main(int argc, char const *argv[])
 {
     int v;
@@ -73,6 +88,7 @@ int main(int argc, char const *argv[])
         visited[i] = 0;
     }
     create(Adj, v);
+    display(Adj, v);
     int src, dest;
     printf("Enter source vertex: ");
     scanf("%d", &src);
