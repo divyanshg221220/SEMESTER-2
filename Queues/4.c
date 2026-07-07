@@ -90,10 +90,10 @@ int main(int argc, char const *argv[])
     int choice, val;
     do
     {
-        printf("1. Insertion at front\n");
-        printf("2. Insertion at rear\n");
-        printf("3. Deletion at front\n");
-        printf("4. Deletion at rear\n");
+        printf("1. Enqueue at front\n");
+        printf("2. Enqueue at rear\n");
+        printf("3. Dequeue at front\n");
+        printf("4. Dequeue at rear\n");
         printf("5. Display\n");
         printf("6. Exit\n");
         printf("Enter your choice: ");
