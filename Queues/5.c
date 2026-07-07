@@ -84,7 +84,7 @@ int main(int argc, char const *argv[])
             break;
         case 4:
             printf("Exit\n");
-            return 0;
+            break;
         default:
             printf("Invalid choice\n");
             break;

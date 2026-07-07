@@ -99,12 +99,12 @@ int main(int argc, char const *argv[])
         switch (choice)
         {
         case 1:
-            printf("Enter value to enqueue at front: ");
+            printf("Enter the element: ");
             scanf("%d", &value);
             front_enqueue(value);
             break;
         case 2:
-            printf("Enter value to enqueue at rear: ");
+            printf("Enter the element: ");
             scanf("%d", &value);
             rear_enqueue(value);
             break;

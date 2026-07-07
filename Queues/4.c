@@ -127,4 +127,5 @@ int main(int argc, char const *argv[])
             break;
         }
     } while (choice != 6);
+    return 0;
 }
