@@ -10,12 +10,12 @@ void create(struct node *Adj[], int v)
 {
     struct node *new, *prev;
     int e, val;
-    for(int i = 0; i < v; i++) 
+    for (int i = 0; i < v; i++) 
     {
         prev = NULL;
         printf("Enter the number of edges of %d: ", i);
         scanf("%d", &e);
-        for(int j = 0; j < e; j++)
+        for (int j = 0; j < e; j++)
         {
             printf("Enter the element %d of %d: ", j + 1, i);
             scanf("%d", &val);
@@ -42,11 +42,11 @@ void create(struct node *Adj[], int v)
 void display(struct node *Adj[], int v)
 {
     struct node *temp;
-    for(int i = 0; i < v; i++)
+    for (int i = 0; i < v; i++)
     {
         temp = Adj[i];
         printf("%d: ", i);
-        while(temp != NULL)
+        while (temp != NULL)
         {
             printf("%d -> ", temp -> vertex);
             temp = temp -> next;
@@ -60,7 +60,7 @@ int main(int argc, char const *argv[])
     printf("Enter the number of vertices: ");
     scanf("%d", &v);
     struct node *Adj[v];
-    for(int i = 0; i < v; i++)
+    for (int i = 0; i < v; i++)
     {
         Adj[i] = NULL;
     }

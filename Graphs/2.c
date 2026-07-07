@@ -10,12 +10,12 @@ void create(struct node *Adj[], int v)
 {
     struct node *new, *prev;
     int e, val;
-    for(int i = 0; i < v; i++) 
+    for (int i = 0; i < v; i++) 
     {
         prev = NULL;
         printf("Enter the number of edges of %d: ", i);
         scanf("%d", &e);
-        for(int j = 0; j < e; j++)
+        for (int j = 0; j < e; j++)
         {
             printf("Enter the element %d of %d: ", j + 1, i);
             scanf("%d", &val);
@@ -62,17 +62,18 @@ int path(struct node *Adj[], int visited[], int src, int dest)
 }
 int main(int argc, char const *argv[])
 {
-    int v, src, dest;
+    int v;
     printf("Enter the number of vertices: ");
     scanf("%d", &v);
     struct node *Adj[v];
     int visited[v];
-    for(int i = 0; i < v; i++)
+    for (int i = 0; i < v; i++)
     {
         Adj[i] = NULL;
         visited[i] = 0;
     }
     create(Adj, v);
+    int src, dest;
     printf("Enter source vertex: ");
     scanf("%d", &src);
     printf("Enter destination vertex: ");
