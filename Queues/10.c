@@ -26,21 +26,6 @@ void enqueue(int val)
     rear -> next = new;
     rear = new;
 }
-void dequeue()
-{
-    if (front == NULL)
-    {
-        printf("UNDERFLOW\n");
-        return;
-    }
-    struct queue *temp = front;
-    front = front -> next;
-    if (front == NULL)
-    {
-        rear = NULL;
-    }
-    free(temp);
-}
 void push(int val)
 {
     enqueue(val);
@@ -82,12 +67,10 @@ int main(int argc, char const *argv[])
     int choice, val;
     do
     {
-        printf("1. Enqueue\n");
-        printf("2. Dequeue\n");
-        printf("3. Push\n");
-        printf("4. Pop\n");
-        printf("5. Display\n");
-        printf("6. Exit\n");
+        printf("1. Push\n");
+        printf("2. Pop\n");
+        printf("3. Display\n");
+        printf("4. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
         switch (choice)
@@ -95,29 +78,21 @@ int main(int argc, char const *argv[])
         case 1:
             printf("Enter the element: ");
             scanf("%d", &val);
-            enqueue(val);
-            break;
-        case 2:
-            dequeue();
-            break;
-        case 3:
-            printf("Enter the element: ");
-            scanf("%d", &val);
             push(val);
             break;
-        case 4:
+        case 2:
             pop();
             break; 
-        case 5:
+        case 3:
             display();
             break;
-        case 6:
+        case 4:
             printf("Exit\n");
             break;
         default:
             printf("Invalid choice\n");
             break;
         }
-    } while (choice != 6);
+    } while (choice != 4);
     return 0;
 }
