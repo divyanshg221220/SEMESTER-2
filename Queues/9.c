@@ -41,13 +41,13 @@ void dequeue()
         printf("UNDERFLOW\n");
         return;
     }
-    if (top -> next == NULL)
+    struct stack *temp = top;
+    if (temp -> next == NULL)
     {
-        free(top);
         top = NULL;
+        free(temp);
         return;
     }
-    struct stack *temp = top;
     while (temp -> next != NULL)
     {
         temp = temp -> next;
