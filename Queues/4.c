@@ -21,6 +21,7 @@ void front_enqueue(int val)
     if (rear == NULL)
     {
         front = rear = new;
+        return;
     }
     front = new;
 }
@@ -51,6 +52,10 @@ void front_dequeue()
     }
     struct queue *temp = front;
     front = front -> next;
+    if (front == NULL)
+    {
+        rear = NULL;
+    }
     free(temp);
 }
 void rear_dequeue()
