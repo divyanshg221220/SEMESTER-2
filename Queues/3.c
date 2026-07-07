@@ -1,92 +1,113 @@
 // Write a program to create a queue using arrays which permits insertion at both the ends.
 #include <stdio.h>
-#include <stdlib.h>
-struct queue
-{
-    int data;
-    struct queue *next;
-};
-struct queue *front = NULL;
-struct queue *rear = NULL;
+#define MAX 5
+int queue[MAX];
+int front = -1, rear = -1;
 void front_enqueue(int val)
 {
-    struct queue *new = malloc(sizeof(struct queue));
-    if (new == NULL)
+    if (front == 0)
     {
         printf("OVERFLOW\n");
         return;
     }
-
-    new -> data = val;
-    new -> next = front;
-    if (rear == NULL)
+    else
     {
-        front = rear = new;
+        if (front == -1)
+        {
+            front = rear = 0;
+        }
+        else
+        {
+            front--;
+        }
+        queue[front] = val;
     }
-    front = new;
 }
 void rear_enqueue(int val)
 {
-    struct queue *new = malloc(sizeof(struct queue));
-    if (new == NULL)
+    if (rear == MAX - 1)
     {
         printf("OVERFLOW\n");
         return;
     }
-    new -> data = val;
-    new -> next = NULL;
-    if (rear == NULL)
+    else
     {
-        front = rear = new;
+        if (front == -1)
+        {
+            front = rear = 0;
+        }
+        else
+        {
+            rear++;
+        }
+        queue[rear] = val;
+    }
+}
+void dequeue()
+{
+    if (front == -1 || front > rear)
+    {
+        printf("UNDERFLOW\n");
         return;
     }
-    rear -> next = new;
-    rear = new;
+    else
+    {
+        front++;
+    }
 }
 void display()
 {
-    struct queue *temp = front;
-    while (temp != NULL)
+    if (front == -1 || front > rear)
     {
-        printf("%d -> ", temp -> data);
-        temp = temp -> next;
+        printf("NULL\n");
+        return;
     }
-    printf("NULL\n");
+    else
+    {
+        for (int i = front; i <= rear; i++)
+        {
+            printf("%d ", queue[i]);
+        }
+        printf("\n");
+    }
 }
 int main(int argc, char const *argv[])
 {
-    int n;
-    printf("Enter the number of elements: ");
-    scanf("%d", &n);
-    int val;
-    for (int i = 0; i < n; i++)
+    int choice, val;
+    do
     {
-        printf("Enter the element %d: ", i + 1);
-        scanf("%d", &val);
-        rear_enqueue(val);
-    }
-    display();
-    printf("Enter the elements to insert: ");
-    scanf("%d", &val);
-    int choice;
-    printf("1. Insertion at front\n");
-    printf("2. Insertion at rear\n");
-    printf("Enter your choice: ");
-    scanf("%d", &choice);
-    switch (choice)
-    {
-    case 1:
-        front_enqueue(val);
-        printf("After insertion at front\n");
-        break;
-    case 2:
-        rear_enqueue(val);
-        printf("After insertion at rear\n");
-        break;
-    default:
-        printf("Invalid choice\n");
-        return 1;
-    }
-    display();
+        printf("1. Enqueue at front\n");
+        printf("2. Enqueue at rear\n");
+        printf("3. Dequeue\n");
+        printf("4. Display\n");
+        printf("5. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            printf("Enter value to enqueue at front: ");
+            scanf("%d", &val);
+            front_enqueue(val);
+            break;
+        case 2:
+            printf("Enter value to enqueue at rear: ");
+            scanf("%d", &val);
+            rear_enqueue(val);
+            break;
+        case 3:
+            dequeue();
+            break;
+        case 4:
+            display();
+            break;
+        case 5:
+            printf("Exit\n");
+            break;
+        default:
+            printf("Invalid choice\n");
+            break;
+        }
+    } while (choice != 5);
     return 0;
 }
